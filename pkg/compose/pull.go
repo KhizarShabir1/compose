@@ -139,7 +139,7 @@ func (s *composeService) pull(ctx context.Context, project *types.Project, opts 
 	err = eg.Wait()
 
 	if len(mustBuild) > 0 {
-		w.TailMsgf("WARNING: Some service image(s) must be built from source by running:\n    docker compose build %s", strings.Join(mustBuild, " "))
+		w.TailMsgf("WARNING: Some service image(s) must be built from source by running:\n    docker compose build", strings.Join(mustBuild, " "))
 	}
 
 	if err != nil {
